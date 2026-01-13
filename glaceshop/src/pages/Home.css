@@ -1,0 +1,121 @@
+.home-page {
+  font-family: "Josefin Sans", sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+
+
+.hero {
+  height: 70vh;
+  min-height: 500px;
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+              url('https://cdn.sanity.io/images/bs9rmafh/main/e2ea8d09f77a3f40ece22168b985c93299a3c7ab-2700x1620.png?w=2700&h=1620&fit=crop&q=80&auto=format') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 3.8rem;
+  margin-bottom: 0.8rem;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+}
+
+.hero-content p {
+  font-size: 1.6rem;
+  margin: 0;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+
+.welcome, .about {
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.welcome {
+  padding: 5rem 1.5rem;
+  background: #fffaf5;          /* ili neka svetla boja po želji */
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 2.6rem;
+  color: #af609be7;           
+  margin-bottom: 1.5rem;
+}
+
+.welcome p, .about p {
+  font-size: 1.25rem;
+  max-width: 720px;
+  margin: 0 auto 1.5rem;
+}
+
+.about {
+  padding: 5rem 1.5rem;
+  background: #fffaf5;          /* ili neka svetla boja po želji */
+}
+
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;              /* na malim ekranima ide jedno ispod drugog */
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text h2 {
+  font-size: 2.6rem;
+  color: #af609be7;               /* ili tvoja glavna boja */
+  margin-bottom: 1.5rem;
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 3px solid #af609be7;     /* tanki okvir u traženoj boji */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.03);           /* mali hover efekat – opciono */
+}
+
+/* Mobilni prikaz – tekst ide gore, slika dole */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  
+  .about-text {
+    text-align: center;
+  }
+}
