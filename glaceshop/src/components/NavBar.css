@@ -1,0 +1,46 @@
+/* src/components/NavBar.css */
+
+.navbar {
+  background: #c0f1b1;          
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;      
+  gap: 2.5rem;                  
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.15rem;
+  font-weight: 500;
+  padding: 0.5rem 0.8rem;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link:active {
+  color: #ffe066;               /* žuta za hover efekat */
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+}
+
+/* za mobilne uređaje */
+@media (max-width: 600px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+    padding: 0.6rem 1rem;
+  }
+}
