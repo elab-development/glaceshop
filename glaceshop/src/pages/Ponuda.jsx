@@ -1,7 +1,12 @@
-
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import './Ponuda.css';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+
+
+
 
 function Ponuda() {
   const specijaliteti = [
@@ -47,6 +52,20 @@ function Ponuda() {
     }
   ];
 
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredSpecijaliteti = specijaliteti.filter(item =>
+    item.naziv.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+
+  const navigate = useNavigate();
+
+  const handleSelect = (naziv) => {
+    navigate('/kontakt', { state: { specijalitet: naziv } });
+  };
+
+  
   return (
     <div className="ponuda-page">
       <NavBar />
@@ -57,23 +76,38 @@ function Ponuda() {
         </div>
       </section>
 
+        
+
       <section className="specijaliteti-section">
         <div className="container">
           <p className="uvod-text">
             U nastavku možete videti pregled naših specijaliteta - sveže pripremljeno, sa prirodnim sastojcima i puno ljubavi.
           </p>
 
+          <div className="search-box">
+            <input
+              type="text"
+              placeholder="Traži ukus (npr. jagoda, pistacija, nutella...)"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="search-input"
+            />
+          </div>
+
           <div className="specijaliteti-grid">
-            {specijaliteti.map((item, index) => (
-              <div key={index} className="specijalitet-card">
+            {filteredSpecijaliteti.map((item, index) => (
+              <div key={index} className="specijalitet-card"
+                  onClick={() => handleSelect(item.naziv)}
+                  style={{ cursor: 'pointer' }}
+              >
                 <img 
-                  src={item.slika} 
-                  alt={item.naziv} 
-                  className="specijalitet-img"
+                    src={item.slika} 
+                    alt={item.naziv} 
+                    className="specijalitet-img"
                 />
-                <h3 className="specijalitet-naziv">{item.naziv}</h3>
-                <p className="specijalitet-opis">({item.opis})</p>
-              </div>
+            <h3 className="specijalitet-naziv">{item.naziv}</h3>
+            <p className="specijalitet-opis">({item.opis})</p>
+          </div>
             ))}
           </div>
         </div>

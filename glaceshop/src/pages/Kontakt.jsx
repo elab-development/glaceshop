@@ -1,5 +1,6 @@
-// src/pages/Kontakt.jsx
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import InputField from '../components/InputField';
@@ -47,6 +48,17 @@ function Kontakt() {
       });
     }
   };
+
+  const { state } = useLocation();
+
+  useEffect(() => {
+    if (state?.specijalitet) {
+      setFormData(prev => ({
+        ...prev,
+        specijalitet: state.specijalitet
+      }));
+    }
+  }, [state]);
 
   return (
     <div className="kontakt-page">
