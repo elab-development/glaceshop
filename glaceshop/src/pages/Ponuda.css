@@ -1,0 +1,83 @@
+.ponuda-page {
+  font-family: "Josefin Sans", sans-serif; 
+}
+
+.hero-ponuda {
+  height: 50vh;
+  min-height: 400px;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),  
+              url('https://mag.guydemarle.com/app/uploads/2024/07/comment-reconnaitre-une-vraie-glace-artisanale.jpg') 
+              center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fffaf5;
+}
+
+.hero-overlay h1 {
+  font-size: 3.5rem;
+  margin: 0;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.7);
+}
+
+.specijaliteti-section {
+  padding: 4rem 1.5rem;
+  background: #fffaf5;
+}
+
+.uvod-text {
+  text-align: center;
+  font-size: 1.3rem;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  color: #555;
+}
+
+.specijaliteti-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.specijalitet-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.specijalitet-card:hover {
+  transform: translateY(-8px);
+}
+
+.specijalitet-img {
+  width: 100%;
+  height: 260px;               
+  object-fit: cover;
+  border-bottom: 3px solid #af609be7;  
+}
+
+.specijalitet-naziv {
+  font-size: 1.5rem;
+  margin: 1rem 0 0.5rem;
+  color: #af609be7;
+}
+
+.specijalitet-opis {
+  font-size: 1rem;
+  color: #666;
+  margin: 0 1rem 1.5rem;
+  font-style: italic;
+}
+
+
+@media (max-width: 600px) {
+  .specijaliteti-grid {
+    grid-template-columns: 1fr;
+  }
+}

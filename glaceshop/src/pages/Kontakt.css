@@ -1,0 +1,91 @@
+.form-section {
+  padding: 4rem 1.5rem;
+  background: #fffaf5;
+}
+
+.contact-form {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  border: 2px solid #af609be7;
+  border-radius: 16px;
+  background: white;
+}
+
+.form-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;           /* razmak između redova */
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: minmax(220px, 260px) 1fr;
+  gap: 2rem;
+  align-items: baseline;   /* ← OVO JE KLJUČNO – baseline poravnanje */
+}
+
+.form-label {
+  color: #af609be7;
+  font-weight: 500;
+  font-size: 1.1rem;
+  text-align: right;
+  padding-top: 0.6rem;     /* fino podešavanje visine */
+  white-space: nowrap;
+}
+
+.input-field,
+.textarea-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #af609be7;
+  border-radius: 8px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1rem;
+  background: #fffaf5;
+  color: #333;
+  box-sizing: border-box;
+}
+
+/* Fiksna visina za obične input-e da bi baseline bio konzistentan */
+.input-field:not(.textarea-field) {
+  height: 44px;
+}
+
+.textarea-field {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.button-wrapper {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.custom-button {
+  background: #af609be7;
+  color: white;
+  border: none;
+  padding: 0.9rem 2.5rem;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.custom-button:hover {
+  background: #8f4e8a;
+}
+
+/* Responsivnost */
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .form-label {
+    text-align: left;
+    padding-top: 0;
+  }
+}
