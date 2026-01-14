@@ -17,7 +17,7 @@ function Kontakt() {
     specijalitet: '',
     kolicina: '',
     adresa: '',
-    napomene: '',
+    napomene: '(nema)',
   });
 
   const [popupMessage, setPopupMessage] = useState(null);
@@ -37,11 +37,12 @@ function Kontakt() {
 
     if (missing) {
       setPopupMessage("Niste dobro uneli sve podatke.");
+      console.log("Greška: ", missing);
     } else {
-      // ovde bi išao pravi submit (npr. fetch na backend)
+      
       console.log('Poslato:', formData);
       setPopupMessage("Forma je uspešno poslata.");
-      // reset forme (opciono)
+      
       setFormData({
         imePrezime: '', email: '', datum: '', alergije: '(nema)',
         specijalitet: '', kolicina: '', adresa: '', napomene: ''
@@ -59,6 +60,14 @@ function Kontakt() {
       }));
     }
   }, [state]);
+
+  useEffect(() => {
+  if (popupMessage) {
+    const timer = setTimeout(() => setPopupMessage(null), 4000);
+    return () => clearTimeout(timer);
+  }
+}, [popupMessage]);
+
 
   return (
     <div className="kontakt-page">
@@ -154,6 +163,7 @@ function Kontakt() {
                 type="textarea"
                 name="napomene"
                 value={formData.napomene}
+                placeholder="(nema)"
                 onChange={handleChange}
                 rows={4}
               />

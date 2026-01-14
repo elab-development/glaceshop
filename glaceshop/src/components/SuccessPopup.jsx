@@ -6,7 +6,7 @@ function SuccessPopup({ message, onClose }) {
   return (
     <div className="popup-overlay">
       <div className="popup-content">
-        <p>{message}</p>
+        <p>{message} 🎉</p>
         <Button onClick={onClose}>OK</Button>
       </div>
     </div>

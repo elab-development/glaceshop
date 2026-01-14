@@ -35,14 +35,14 @@
 .form-rows {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;           /* razmak između redova */
+  gap: 1.2rem;          
 }
 
 .form-row {
   display: grid;
   grid-template-columns: minmax(220px, 260px) 1fr;
   gap: 2rem;
-  align-items: baseline;   /* ← OVO JE KLJUČNO – baseline poravnanje */
+  align-items: baseline;   
 }
 
 .form-label {
@@ -50,7 +50,7 @@
   font-weight: 500;
   font-size: 1.1rem;
   text-align: right;
-  padding-top: 0.6rem;     /* fino podešavanje visine */
+  padding-top: 0.6rem;     
   white-space: nowrap;
 }
 
@@ -67,7 +67,7 @@
   box-sizing: border-box;
 }
 
-/* Fiksna visina za obične input-e da bi baseline bio konzistentan */
+
 .input-field:not(.textarea-field) {
   height: 44px;
 }
@@ -97,7 +97,7 @@
   background: #8f4e8a;
 }
 
-/* Responsivnost */
+
 @media (max-width: 768px) {
   .form-row {
     grid-template-columns: 1fr;
@@ -109,3 +109,33 @@
     padding-top: 0;
   }
 }
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);       
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;                        
+}
+
+.popup-content {
+  background: white;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.popup-content p {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
